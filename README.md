@@ -6,3 +6,4 @@ Rucart Timothe
 Borée Cyprien
 Duquesne Romain
 Speleers Valentin
+Loriette Audrey
