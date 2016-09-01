@@ -16,7 +16,27 @@ public class Evenement {
     private Calendar dateDebut;
     private Calendar dateFin;
     private String description;
-
+    
+    public Evenement(){
+    }
+    
+    public Evenement(String nom){
+        this();
+        this.nom = nom;
+    }
+    
+    public Evenement(String nom, String description){
+        this(nom);
+        this.description = description;
+    }
+    
+    public Evenement(String nom, Calendar dateDebut, Calendar dateFin, String description) {
+        this(nom);
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.description = description;
+    }
+    
     public String getNom() {
         return nom;
     }
@@ -49,5 +69,10 @@ public class Evenement {
         this.description = description;
     }
     
+    public String toString(){
+        String returnMessage = "";
+        returnMessage += "Evemenent: " + nom;
+        return returnMessage;
+    }
     
 }
