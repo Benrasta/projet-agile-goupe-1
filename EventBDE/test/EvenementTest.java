@@ -49,12 +49,10 @@ public class EvenementTest {
     @Test
     public void testGetDateFin() {
         System.out.println("getDateFin");
-        Evenement instance = new Evenement();
-        Calendar expResult = null;
+        Evenement instance = new Evenement("test", new GregorianCalendar(2016,8,10,10,0), new GregorianCalendar(2016,8,10,10,0), "test");
+        Calendar expResult = new GregorianCalendar(2016,8,10,10,0);
         Calendar result = instance.getDateFin();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
