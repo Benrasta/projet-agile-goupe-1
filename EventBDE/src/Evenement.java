@@ -84,7 +84,11 @@ public class Evenement {
         return returnMessage;
     }
     
-    
+    /**
+     *  Retourne une string de la date sous la forme jj/mm/yyyy
+     *  @param date La date que l'on souhaite formater
+     * 
+     * */
     public String dateFormat(Calendar date){
         String message = "";
         message += date.DAY_OF_MONTH + "/" + date.MONTH + "/" + date.YEAR;
