@@ -70,16 +70,19 @@ public class SondageTest {
     /**
      * Test of toString method, of class Sondage.
      */
-    @Test
+   @Test
     public void testToString() {
         System.out.println("toString");
-        Sondage instance = new Sondage();
-        String expResult = "";
+        Sondage instance = new Sondage("test","test");
+        String expResult = "Evenement: test\nnombre de vote(s) pour : 0\n";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
- 
+        System.out.println(result+"lol");
+        
+        
+        Sondage s1 = new Sondage("test");
+        String res1 = "Evenement: test\nnombre de vote(s) pour : 0\n";
+        String result1 = s1.toString();
+        assertEquals(result1, res1);    
+    }        
 }

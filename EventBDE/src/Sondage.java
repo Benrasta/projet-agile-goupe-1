@@ -36,7 +36,7 @@ public class Sondage extends Evenement {
     }
     
     public String toString(){
-       return  super.toString();
+       return  super.toString()+"nombre de vote(s) pour : "+compteur+"\n"; 
         
     }
     
