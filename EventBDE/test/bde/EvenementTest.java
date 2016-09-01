@@ -151,7 +151,7 @@ public class EvenementTest {
         System.out.println("dateFormat");
         Calendar date = new GregorianCalendar(2016,8,10,10,0);
         Evenement instance = new Evenement();
-        String expResult = "10/9/2016";
+        String expResult = "10/8/2016";
         String result = instance.dateFormat(date);
         assertEquals(expResult, result);
     }
