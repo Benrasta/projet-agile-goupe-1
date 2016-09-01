@@ -20,7 +20,7 @@ public class Login {
     private String pseudo;
     private String mdp;
    // private boolean log;
-    
+    private boolean admin;
     
     
     
@@ -28,7 +28,11 @@ public class Login {
      //   this.log =false;
         this.pseudo=pseudo;
         this.mdp=mdp;
+        this.admin=false;
         
+    }
+    public boolean EstAdmin(){
+        return this.admin;
     }
     
     public String getpseudo(){
@@ -72,6 +76,10 @@ public class Login {
         for(int i =0 ; i < list.size(); i++){
             
                 if(this.equalsL(list.get(i))){
+                    
+                    if(this.getpseudo().equals("admin")){
+                        this.admin=true;
+                    }
                     return true;
                 }
         }
