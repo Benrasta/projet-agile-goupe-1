@@ -32,6 +32,16 @@ public class ListEvenementsTest {
         
     }
     
+        @Test
+    public void testAjouter2Evenements() {
+        ListEvenements liste = new ListEvenements();
+        liste.ajouterEvenement(new Evenement("vt1",new GregorianCalendar(2016,8,31),new GregorianCalendar(2016,8,31),"desc"));
+        liste.ajouterEvenement(new Evenement("vt2",new GregorianCalendar(2016,8,31),new GregorianCalendar(2016,8,31),"desc"));
+        assertEquals(2, liste.size());
+        
+        
+    }
+    
          @Test
     public void testnomDejaPresent() {
         ListEvenements liste = new ListEvenements();
