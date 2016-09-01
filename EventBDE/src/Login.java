@@ -5,7 +5,7 @@
  */
 
 /**
- * @author yolo
+ * @author HOLQUIN  Benjamin ,AVANESSOVA Mariam
  */
 public class Login {
     private String pseudo;
