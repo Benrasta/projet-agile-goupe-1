@@ -1,23 +1,25 @@
+package bde;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import bde.Login;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 /**
  *
- * @author boreec
+ * @author HOLQUIN  Benjamin ,AVANESSOVA Mariam
  */
-public class MainTest {
+public class LoginTest {
     
-    public MainTest() {
+    public LoginTest() {
     }
     
     @BeforeClass
@@ -37,9 +39,9 @@ public class MainTest {
     }
 
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testVerifier() {
+        Login login = new Login("admin", "admin");
+        boolean bol = false;
+        assertTrue(bol);
     }
-    
 }
