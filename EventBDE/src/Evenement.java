@@ -73,10 +73,10 @@ public class Evenement {
         String returnMessage = "";
         returnMessage += "Evenement: " + nom + "\n";
         if(dateDebut != null){
-            returnMessage += "date debut:" + dateFormat(dateDebut); 
+            returnMessage += "date debut:" + dateFormat(dateDebut) + "\n"; 
         }
         if(dateFin != null){
-            returnMessage += "date fin: " + "\n" + dateFormat(dateFin);
+            returnMessage += "date fin: " + dateFormat(dateFin) + "\n";
         }
         if(description != null){
          returnMessage += description + "\n" ;   
