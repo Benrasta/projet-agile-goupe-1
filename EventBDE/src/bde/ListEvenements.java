@@ -1,7 +1,9 @@
 package bde;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -128,6 +130,24 @@ public class ListEvenements {
 	}
     }
 
+        /**
+     * Affiche le contenu d'un fichier CSV vers l'entree standard
+     */
+    public void afficherCSV(){
+        String fichier = "evenement.csv";
+        String line = "";
+        String separateur = ",";
+        try (BufferedReader br = new BufferedReader(new FileReader(fichier))) {
+
+            while ((line = br.readLine()) != null) {
+                // use comma as separator
+                String[] data = line.split(separateur);
+                System.out.println("evenement: " + data[0] + " debut: " + data[1] + " fin: " + data[2]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 
