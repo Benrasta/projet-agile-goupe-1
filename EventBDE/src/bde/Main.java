@@ -3,6 +3,7 @@ package bde;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 
 //Audrey
 
@@ -16,16 +17,51 @@ import java.util.GregorianCalendar;
  *
  * @author lo
  */
-public class Main {
+public  class Main {
+    public static String Scan(){
+        Scanner sc = new Scanner(System.in);
+        String res = sc.toString();
+        sc.close();
+        System.out.println(res);
+        return res;
+    }
+    
+    public static int ScanInt(){
+        Scanner sc = new Scanner(System.in);
+        int res = sc.nextInt();
+        System.out.println(res);
+        return res;
+    }
+    
+    
     public static void main(String args[]){
         Evenement e =new Evenement("yolo", "on va faire du yolo swag");
         Calendar date = new GregorianCalendar(2017,2,20);
         Evenement e2 =new Evenement("soiré frite",date ,date , "on va faire une frite chez momo");
+        
+        
+        
          ListEvenements le =new ListEvenements();
          le.ajouterEvenement(e);
          le.ajouterEvenement(e2);
          System.out.println(le.toString());
         
+         
+         System.out.println(" voulez vous crée un  évenement ?");
+         System.out.println("1 :oui ");
+         System.out.println("2 :non ");
+         
+         int r = ScanInt();
+         
+         if(r == 1){
+             
+         }
+         
+         
+         
+         System.out.println(" voulez vous suprimer un  évenement ?");
+         System.out.println("1 :oui ");
+         System.out.println("2 :non ");
         
     }
 }
