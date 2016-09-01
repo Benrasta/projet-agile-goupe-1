@@ -23,6 +23,8 @@ public class Evenement {
     public Evenement(){
         nom = "";
         description = "";
+        dateDebut = new GregorianCalendar();
+        dateFin = new GregorianCalendar();
     }
     
     public Evenement(String nom){

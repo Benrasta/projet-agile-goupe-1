@@ -36,7 +36,10 @@ public class ListEvenements {
                 liste.add(e);
                 var = true;
             }
-            
+            else if((liste.get(i).getDateDebut().equals(e.getDateDebut()))){
+                liste.add(i+1,e);
+                var = true;
+            }
             else if(liste.get(i).getDateDebut().after(e.getDateDebut())){
                 liste.add(i,e);
                 var = true;
