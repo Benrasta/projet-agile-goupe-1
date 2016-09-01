@@ -129,7 +129,14 @@ public class ListEvenements {
             e.printStackTrace();
 	}
     }
-
+  public Evenement retourneEvenement(String nom){
+        for(int i = 0; i<liste.size();i++){
+            if(liste.get(i).getNom().equals(nom)){
+                return liste.get(i);
+            }
+        }
+        return null;
+    }
         /**
      * Affiche le contenu d'un fichier CSV vers l'entree standard
      */

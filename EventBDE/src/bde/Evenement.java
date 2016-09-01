@@ -99,7 +99,9 @@ public class Evenement {
      * */
     public String dateFormat(Calendar date){
         String message = "";
-        message += date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + date.get(GregorianCalendar.MONTH) + "/" + date.get(GregorianCalendar.YEAR);
+        int test = date.get(GregorianCalendar.MONTH);
+        test+=1;
+        message += date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + test + "/" + date.get(GregorianCalendar.YEAR);
         return message;
     }
 }
