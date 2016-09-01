@@ -2,6 +2,7 @@ package bde;
 
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -79,7 +80,7 @@ public class Evenement {
         if(dateDebut != null){
             returnMessage += "date debut:" + dateFormat(dateDebut) + "\n"; 
         }
-        if(dateFin != null){
+        if(dateFin != null && dateFin != dateDebut){
             returnMessage += "date fin: " + dateFormat(dateFin) + "\n";
         }
         return returnMessage;
@@ -96,7 +97,7 @@ public class Evenement {
      * */
     public String dateFormat(Calendar date){
         String message = "";
-        message += date.DAY_OF_MONTH + "/" + date.MONTH + "/" + date.YEAR;
+        message += date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + date.get(GregorianCalendar.MONTH) + "/" + date.get(GregorianCalendar.YEAR);
         return message;
     }
     
