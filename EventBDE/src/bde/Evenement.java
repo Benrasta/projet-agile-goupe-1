@@ -102,7 +102,4 @@ public class Evenement {
         message += date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + date.get(GregorianCalendar.MONTH) + "/" + date.get(GregorianCalendar.YEAR);
         return message;
     }
-    
-    
-    
 }
