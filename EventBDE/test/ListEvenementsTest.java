@@ -42,6 +42,7 @@ public class ListEvenementsTest {
         Evenement e2 = new Evenement("test");
         liste.ajouterEvenement(new Evenement("test 1"));
         liste.ajouterEvenement(e2);
+        System.out.println(liste.toString());
         assertEquals("Evenement: test 1\nEvenement: test\n", liste.toString());
        
     }
