@@ -19,6 +19,10 @@ public class ListEvenements {
     public void ajouterEvenement(Evenement e){
         liste.add(e);
     }
+    
+    public void supprimerEvenement(Evenement e){
+        liste.remove(e);
+    }
 
       public int size(){
         return liste.size();
