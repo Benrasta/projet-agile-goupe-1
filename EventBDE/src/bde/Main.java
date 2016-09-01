@@ -41,31 +41,78 @@ public  class Main {
          le.ajouterEvenement(e2);
          System.out.println(le.toString());
         
-         
-         System.out.println(" voulez vous crée un  évenement ?");
-         System.out.println("1 :oui ");
-         System.out.println("2 :non ");
+         System.out.println("que voulez vous faire ?");
+         System.out.println("1 :afficher les evenement ");
+         System.out.println("2 : ajouté un evenement");
+         System.out.println("3 : suprimmer un evenement ");
+         System.out.println("4 : modifier un evenement ");
        
          
          Scanner sctmp = new Scanner(System.in);
-         int r =sctmp.nextInt(); 
+         int cm =sctmp.nextInt(); 
+         sctmp.nextLine();         
+         if(cm == 1){
+               System.out.println(le.toString());
+         
+         }else {
+             if(cm == 2){
+                  System.out.println(" voulez vous crée vraiment un  évenement ?");
+           System.out.println("1 :oui ");
+            System.out.println("2 :non ");
+       
+         
+        
+            int r =sctmp.nextInt(); 
+         
+              sctmp.nextLine();
+                if(r == 1){
+                    System.out.println("entrer le nom de l'evenement");
+             
+           
+                    String name = sctmp.nextLine();
+                     sctmp.nextLine();
+           
+                    Evenement e3 = new Evenement(name);
+                    le.ajouterEvenement(e3);
+                    System.out.println(le.toString());
+                }
+                
+                
+             }else{
+                 if(cm ==3 ){
+                      System.out.println(" voulez vous  vraiment suprimer un  évenement ?");
+         System.out.println("1 :oui ");
+         System.out.println("2 :non ");
+              Scanner sctmp2 = new Scanner(System.in);
+         int r2 =sctmp2.nextInt(); 
          
         sctmp.nextLine();
-         if(r == 1){
+         if(r2 == 1){
              System.out.println("entrer le nom de l'evenement");
              
            
-               String name = sctmp.nextLine();
-               sctmp.close();
-           
-             Evenement e3 = new Evenement(name);
-             le.ajouterEvenement(e3);
+               String name = sctmp2.nextLine();
+               sctmp.nextLine();
+               
+            
+             le.supprimerEvenementAvecLeNom(name);
+             System.out.println(le.toString());
          }
          
+         
+                 }else{
+                     if(cm == 4){
+                         
+                     }
+                 }
+             }
+         }
+         
+      sctmp.close();
+         
+         
+         
         
-         System.out.println(" voulez vous suprimer un  évenement ?");
-         System.out.println("1 :oui ");
-         System.out.println("2 :non ");
         
     }
 }

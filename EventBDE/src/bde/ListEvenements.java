@@ -24,11 +24,12 @@ public class ListEvenements {
     
     
     public void ajouterEvenement(Evenement e){
-         /*if(!nomDejaPresent(e.getNom())){
+         if(!nomDejaPresent(e.getNom())){
             liste.add(e);
         }else{
             System.out.println("Nom déjà pris !!");
-        }*/
+        }
+         /*
         boolean var = false;
         int i=0;
         while(!var){
@@ -47,6 +48,8 @@ public class ListEvenements {
             else 
                 i++;
         }
+                 
+                 */
     }
     
     public void supprimerEvenement(Evenement e){
