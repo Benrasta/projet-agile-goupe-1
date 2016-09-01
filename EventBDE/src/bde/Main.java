@@ -39,7 +39,7 @@ public  class Main {
          ListEvenements le =new ListEvenements();
          le.ajouterEvenement(e);
          le.ajouterEvenement(e2);
-         System.out.println(le.toString());
+         //System.out.println(le.toString());
         
          System.out.println("que voulez vous faire ?");
          System.out.println("1 :afficher les evenement ");
@@ -83,16 +83,17 @@ public  class Main {
                       System.out.println(" voulez vous  vraiment suprimer un  évenement ?");
          System.out.println("1 :oui ");
          System.out.println("2 :non ");
-              Scanner sctmp2 = new Scanner(System.in);
-         int r2 =sctmp2.nextInt(); 
+              
+         int r2 =sctmp.nextInt(); 
          
         sctmp.nextLine();
          if(r2 == 1){
              System.out.println("entrer le nom de l'evenement");
              
            
-               String name = sctmp2.nextLine();
-               sctmp.nextLine();
+               String name = sctmp.nextLine();
+              // sctmp.nextLine();
+               System.out.println(name);
                
             
              le.supprimerEvenementAvecLeNom(name);
