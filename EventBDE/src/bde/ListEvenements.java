@@ -20,7 +20,22 @@ public class ListEvenements {
     
     
     public void ajouterEvenement(Evenement e){
-        liste.add(e);
+        //liste.add(e);
+        boolean var = false;
+        int i=0;
+        while(!var){
+            if(liste.size()==0){
+                liste.add(e);
+                var = true;
+            }
+            
+            else if(liste.get(i).getDateDebut().after(e.getDateDebut())){
+                liste.add(i,e);
+                var = true;
+            }
+            else 
+                i++;
+        }
     }
     
     public void supprimerEvenement(Evenement e){
