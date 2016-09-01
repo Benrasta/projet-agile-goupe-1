@@ -1,6 +1,10 @@
 package bde;
 
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +66,42 @@ public class ListEvenements {
 
     public int size(){
         return liste.size();
+    }
+    
+    public void listToCSV() throws FileNotFoundException{
+        String fichier = "evenement.csv";
+        boolean fichierExisteDeja = new File(fichier).exists();
+        
+        StringBuilder sb = new StringBuilder();
+        try {
+            PrintWriter pw = new PrintWriter(new File(fichier));
+            // si le fichier n'existe pas encore
+            if (!fichierExisteDeja){
+                sb.append("nom");
+                sb.append(',');
+                sb.append("debut");
+                sb.append(",");
+                sb.append("fin");
+                sb.append(",");
+                sb.append("description");
+                sb.append('\n');
+            }
+            for(int i=0; i<liste.size();i++){
+                sb.append(liste.get(i).getNom());
+                sb.append(",");
+                sb.append(liste.get(i).dateFormat(liste.get(i).getDateDebut()));
+                sb.append(",");
+                sb.append(liste.get(i).dateFormat(liste.get(i).getDateFin()));
+                sb.append(",");
+                sb.append(liste.get(i).getDescription());
+                sb.append("\n");
+            }
+            pw.write(sb.toString());
+            pw.close();
+            
+	} catch (IOException e) {
+            e.printStackTrace();
+	}
     }
 
 }
