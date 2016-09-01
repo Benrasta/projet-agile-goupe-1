@@ -68,9 +68,7 @@ public class ListEvenementsTest {
         ListEvenements liste = new ListEvenements();
         liste.ajouterEvenement(new Evenement("test",new GregorianCalendar(2016,8,3),new GregorianCalendar(2016,8,3),"desc"));
         liste.ajouterEvenement(new Evenement("test 2",new GregorianCalendar(2016,9,3),new GregorianCalendar(2016,9,3),"desc"));
-        System.out.println(liste.toString());
         assertEquals("Evenement: test\ndate debut:3/8/2016\nEvenement: test 2\ndate debut:3/9/2016\n", liste.toString());
-        System.out.println(liste.toString());
        
     }
     
