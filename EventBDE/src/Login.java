@@ -20,10 +20,10 @@ public class Login {
     }
     
     public String getpseudo(){
-        return this.pseudo;
+        return pseudo;
     }
      public String getmdp(){
-        return this.pseudo;
+        return pseudo;
     }
     public void setPseudo(String np){
         this.pseudo=np;
@@ -32,4 +32,8 @@ public class Login {
         public void setmdp(String nmdp){
         this.mdp=nmdp;
     }
+        
+        public void verifier(){
+            
+        }
 }
