@@ -73,13 +73,19 @@ public class Evenement {
         String returnMessage = "";
         returnMessage += "Evenement: " + nom + "\n";
         if(dateDebut != null){
-            returnMessage += "date debut:" + "\n"; 
+            returnMessage += "date debut:" + dateFormat(dateDebut); 
         }
         if(dateFin != null){
-            returnMessage += "date fin: " + "\n";
+            returnMessage += "date fin: " + "\n" + dateFormat(dateFin);
         }
-        returnMessage += description + "\n";
+        returnMessage += description + "\n" ;
         return returnMessage;
+    }
+    
+    public String dateFormat(Calendar date){
+        String message = "";
+        message += date.DAY_OF_MONTH + "/" + date.MONTH + "/" + date.YEAR;
+        return message;
     }
     
 }
