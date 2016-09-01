@@ -122,12 +122,10 @@ public class EvenementTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Evenement instance = new Evenement();
-        String expResult = "";
+        Evenement instance = new Evenement("nom", "desc");
+        String expResult = "Evenement: nom\n";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -136,12 +134,10 @@ public class EvenementTest {
     @Test
     public void testAvecDescription() {
         System.out.println("avecDescription");
-        Evenement instance = new Evenement();
-        String expResult = "";
+        Evenement instance = new Evenement("nom", "desc");
+        String expResult = "Evenement: nom\ndescription: desc\n";
         String result = instance.avecDescription();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -150,13 +146,11 @@ public class EvenementTest {
     @Test
     public void testDateFormat() {
         System.out.println("dateFormat");
-        Calendar date = null;
+        Calendar date = new GregorianCalendar(2016,8,10,10,0);
         Evenement instance = new Evenement();
-        String expResult = "";
+        String expResult = "10/9/2016";
         String result = instance.dateFormat(date);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
