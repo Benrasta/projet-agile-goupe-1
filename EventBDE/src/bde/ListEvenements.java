@@ -22,35 +22,39 @@ public class ListEvenements {
     List<Evenement> liste = new ArrayList();
     
     
-    
-    public void ajouterEvenement(Evenement e){
-         if(!nomDejaPresent(e.getNom())){
-            liste.add(e);
-        }else{
-            System.out.println("Nom déjà pris !!");
-        }
-         /*
-        boolean var = false;
-        int i=0;
-        while(!var){
-            if(liste.size()==0){
+     public void ajouterEvenement(Evenement e){
+        if(e.getDateDebut()!=null){
+            boolean var = false;            
+            List<Evenement> liste2 = liste;
+            
+             if(liste.isEmpty()){
                 liste.add(e);
-                var = true;
             }
-            else if((liste.get(i).getDateDebut().equals(e.getDateDebut()))){
-                liste.add(i+1,e);
-                var = true;
+             else {
+                liste.add(e);
+                for(int j=0; j<liste.size();j++){
+                    if(liste.get(j).getDateDebut().before(e.getDateDebut()) || var){
+                            liste2.add(liste.get(j));
+                    }
+                    else {
+                        liste2.add(e);
+                        liste2.add(liste.get(j));
+                        var=true;
+                    }
+                }
+                
             }
-            else if(liste.get(i).getDateDebut().after(e.getDateDebut())){
-                liste.add(i,e);
-                var = true;
+        } 
+         else{
+            if(!nomDejaPresent(e.getNom())){
+                liste.add(e);
+            }else{
+                System.out.println("Nom déjà pris !!");
             }
-            else 
-                i++;
         }
-                 
-                 */
+                
     }
+    
     
     public void supprimerEvenement(Evenement e){
         liste.remove(e);
@@ -124,4 +128,5 @@ public class ListEvenements {
     }
 
 }
+
 
