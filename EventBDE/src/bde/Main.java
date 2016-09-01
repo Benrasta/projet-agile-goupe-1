@@ -30,6 +30,7 @@ public  class Main {
     
     
     public static void main(String args[]){
+        
         Evenement e =new Evenement("yolo", "on va faire du yolo swag");
         Calendar date = new GregorianCalendar(2017,2,20);
         Evenement e2 =new Evenement("soiré frite",date ,date , "on va faire une frite chez momo");
@@ -39,6 +40,7 @@ public  class Main {
          ListEvenements le =new ListEvenements();
          le.ajouterEvenement(e);
          le.ajouterEvenement(e2);
+
          //System.out.println(le.toString());
         
          
@@ -60,7 +62,7 @@ public  class Main {
          int cm =sctmp.nextInt(); 
          sctmp.nextLine();         
          if(cm == 1){
-               System.out.println(le.toString());
+               le.afficherCSV();
                 System.out.println("appuyer sur entrée pour continuer");
          }else if(cm == 2){
                   System.out.println(" voulez vous créer vraiment un évenement ?");
@@ -82,7 +84,7 @@ public  class Main {
            
                     Evenement e3 = new Evenement(name);
                     le.ajouterEvenement(e3);
-                    System.out.println(le.toString());
+                   le.afficherCSV();
                      
                 }
                 
@@ -105,7 +107,7 @@ public  class Main {
                
             
              le.supprimerEvenementAvecLeNom(name);
-             System.out.println(le.toString());
+            le.afficherCSV();
               System.out.println("appuyer sur entrée pour continuer");
          }
          
@@ -133,10 +135,10 @@ public  class Main {
                              int aaaa = sctmp.nextInt();
                              System.out.println("Saisissez le mois :");
                              int m = sctmp.nextInt() -1;
-                              System.out.println("Saisissez le jour :");
+                             System.out.println("Saisissez le jour :");
                              int jj = sctmp.nextInt();
                              le.retourneEvenement(name).setDateDebut(new GregorianCalendar(aaaa,m,jj));
-                             System.out.println(le.toString());
+                             le.afficherCSV();
                          }else if(choix == 3){
                              System.out.println("Saisissez l'année :");
                              int aaaa = sctmp.nextInt();
@@ -145,7 +147,7 @@ public  class Main {
                               System.out.println("Saisissez le jour :");
                              int jj = sctmp.nextInt();
                              le.retourneEvenement(name).setDateFin(new GregorianCalendar(aaaa,m,jj));
-                             System.out.println(le.toString());
+                             le.afficherCSV();
                          }else if(choix == 4){
                              System.out.println("Entrez une nouvelle description : ");
                              String description = sctmp.nextLine();
