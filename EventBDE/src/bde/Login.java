@@ -14,6 +14,10 @@ public class Login {
     private String mdp;
     private boolean log;
     
+    String csv = "/EventBDE/src/bde/logins.csv";
+    String line = "";
+    String cvsSplitBy = ",";
+    
     public Login (String pseudo ,String mdp){
         this.log =false;
         this.pseudo=pseudo;
