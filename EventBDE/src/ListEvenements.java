@@ -12,5 +12,17 @@ import java.util.ArrayList;
  * @author lorietta
  */
 public class ListEvenements {
-    ArrayList<Evenement> liste;
+    ArrayList<Evenement> liste = new ArrayList();
+    
+    
+    
+    public void ajouterEvenement(Evenement e){
+        liste.add(e);
+    }
+
+      public int size(){
+        return liste.size();
+    }
+
 }
+
