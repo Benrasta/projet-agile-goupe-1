@@ -26,13 +26,13 @@ public class ListEvenements {
         if(e.getDateDebut()!=null){
             boolean var = false;            
             List<Evenement> liste2 = liste;
-            
              if(liste.isEmpty()){
                 liste.add(e);
             }
              else {
                 liste.add(e);
-                for(int j=0; j<liste.size();j++){
+                int o = liste.size();
+                for(int j=0; j<o;j++){
                     if(liste.get(j).getDateDebut().before(e.getDateDebut()) || var){
                             liste2.add(liste.get(j));
                     }
@@ -52,8 +52,9 @@ public class ListEvenements {
                 System.out.println("Nom déjà pris !!");
             }
         }
+     }
                 
-    }
+    
     
     
     public void supprimerEvenement(Evenement e){
