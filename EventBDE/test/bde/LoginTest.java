@@ -21,27 +21,29 @@ public class LoginTest {
     
     public LoginTest() {
     }
+    @Test
+    public void testequalsL(){
+        Login l = new  Login("t1", "t1");
+        Login l2 = new  Login("t1", "t1");
+        assertTrue(l.equalsL(l2));
+    }    
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     @Test
     public void testVerifier() {
         Login login = new Login("admin", "admin");
-        boolean bol = false;
-        assertTrue(bol);
+        assertTrue(login.verifier());
+    }
+     @Test
+    public void testVerifier2() {
+        Login login1 = new Login("root", "root");
+        //System.out.println(login1.getmdp()+" "+ login1.getpseudo());
+        assertTrue(login1.verifier());
+    }
+     @Test
+    public void testVerifier3() {
+        Login login2 = new Login("yolo", "yolo");
+         assertFalse(login2.verifier());
+      
     }
 }
+
