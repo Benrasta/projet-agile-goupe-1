@@ -5,8 +5,7 @@
  */
 
 /**
- *
- * @author holquinb
+ * @author yolo
  */
 public class Login {
     private String pseudo;
