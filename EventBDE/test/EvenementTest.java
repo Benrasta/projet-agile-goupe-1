@@ -62,11 +62,10 @@ public class EvenementTest {
     public void testGetDescription() {
         System.out.println("getDescription");
         Evenement instance = new Evenement();
-        String expResult = "";
+        instance.setDescription("test");
+        String expResult = "test";
         String result = instance.getDescription();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -75,11 +74,10 @@ public class EvenementTest {
     @Test
     public void testSetNom() {
         System.out.println("setNom");
-        String nom = "";
+        String nom = "test";
         Evenement instance = new Evenement();
         instance.setNom(nom);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getNom(), "test");
     }
 
     /**
