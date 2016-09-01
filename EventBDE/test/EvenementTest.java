@@ -86,11 +86,10 @@ public class EvenementTest {
     @Test
     public void testSetDateDebut() {
         System.out.println("setDateDebut");
-        Calendar dateDebut = null;
+        Calendar dateDebut = new GregorianCalendar(2016,8,10,10,0);
         Evenement instance = new Evenement();
         instance.setDateDebut(dateDebut);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getDateDebut(), new GregorianCalendar(2016,8,10,10,0));
     }
 
     /**
@@ -98,12 +97,11 @@ public class EvenementTest {
      */
     @Test
     public void testSetDateFin() {
-        System.out.println("setDateFin");
-        Calendar dateFin = null;
+       System.out.println("setDateFin");
+        Calendar dateFin = new GregorianCalendar(2016,8,10,10,0);
         Evenement instance = new Evenement();
         instance.setDateFin(dateFin);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getDateFin(), new GregorianCalendar(2016,8,10,10,0));
     }
 
     /**
@@ -112,11 +110,10 @@ public class EvenementTest {
     @Test
     public void testSetDescription() {
         System.out.println("setDescription");
-        String description = "";
+        String description = "test";
         Evenement instance = new Evenement();
         instance.setDescription(description);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getDescription(), "test");
     }
 
     /**
