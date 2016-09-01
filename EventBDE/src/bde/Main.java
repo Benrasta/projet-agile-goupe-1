@@ -26,12 +26,7 @@ public  class Main {
         return res;
     }
     
-    public static int ScanInt(){
-        Scanner sc = new Scanner(System.in);
-        int res = sc.nextInt();
-        System.out.println(res);
-        return res;
-    }
+    
     
     
     public static void main(String args[]){
@@ -50,15 +45,24 @@ public  class Main {
          System.out.println(" voulez vous crée un  évenement ?");
          System.out.println("1 :oui ");
          System.out.println("2 :non ");
+       
          
-         int r = ScanInt();
+         Scanner sctmp = new Scanner(System.in);
+         int r =sctmp.nextInt(); 
          
+        sctmp.nextLine();
          if(r == 1){
+             System.out.println("entrer le nom de l'evenement");
              
+           
+               String name = sctmp.nextLine();
+               sctmp.close();
+           
+             Evenement e3 = new Evenement(name);
+             le.ajouterEvenement(e3);
          }
          
-         
-         
+        
          System.out.println(" voulez vous suprimer un  évenement ?");
          System.out.println("1 :oui ");
          System.out.println("2 :non ");
