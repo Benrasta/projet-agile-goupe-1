@@ -78,10 +78,11 @@ public class Evenement {
         if(dateFin != null){
             returnMessage += "date fin: " + dateFormat(dateFin) + "\n";
         }
-        if(description != null){
-         returnMessage += description + "\n" ;   
-        }
         return returnMessage;
+    }
+    
+    public String avecDescription(){
+        return this.toString() + "description: " + this.description + "\n";
     }
     
     /**
@@ -94,5 +95,7 @@ public class Evenement {
         message += date.DAY_OF_MONTH + "/" + date.MONTH + "/" + date.YEAR;
         return message;
     }
+    
+    
     
 }
