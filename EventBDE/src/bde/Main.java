@@ -43,13 +43,38 @@ public  class Main {
 
          //System.out.println(le.toString());
         
-         
-         
-         
-         
-         
-         
-         while (true){
+         while(true){
+         System.out.println("que voulez vous faire ?");
+         System.out.println("1 : afficher les evenements ");
+         System.out.println("2 : se connecter ");
+         System.out.println("3 : quitter ");
+         Scanner sctmp = new Scanner(System.in);
+         int cl = sctmp.nextInt();
+         sctmp.nextLine();
+         if( cl == 1){
+             le.trierList();
+             System.out.println(le.toString());
+         }else {
+             if(cl == 2){
+             System.out.println("pseudo : ");
+             String pseu =sctmp.nextLine();
+             System.out.println("appuyer sur entrée pour continuer");
+             sctmp.nextLine();
+             
+             
+             System.out.println(pseu);
+             
+             System.out.println("mdp : ");
+             String mdp =sctmp.nextLine();
+             System.out.println("appuyer sur entrée pour continuer");
+              sctmp.nextLine();
+             
+              
+              Login log = new Login(pseu,mdp);
+             
+             
+             if(log.verifier()){
+                 while (true){
          le.trierList();
          System.out.println("que voulez vous faire ?");
          System.out.println("1 :afficher les evenements ");
@@ -58,7 +83,7 @@ public  class Main {
          System.out.println("4 : modifier un evenement ");
          System.out.println("5 : quitter ");
          
-         Scanner sctmp = new Scanner(System.in);
+         
          int cm =sctmp.nextInt(); 
          sctmp.nextLine();         
          if(cm == 1){
@@ -114,7 +139,7 @@ public  class Main {
          
                  }else if(cm == 4){
                      System.out.println(le.toString());
-                     System.out.println("Quel événement voulez-vous modifier?");
+                     System.out.println("Quelle événement voulait vous modifier?");
                      String name = sctmp.nextLine();
                      if(le.nomDejaPresent(name)){
                          System.out.println("1: Modifier le nom");
@@ -149,24 +174,43 @@ public  class Main {
                              le.retourneEvenement(name).setDateFin(new GregorianCalendar(aaaa,m,jj));
                              le.afficherCSV();
                          }else if(choix == 4){
-                             System.out.println("Entrez une nouvelle description : ");
+                             System.out.println("Entrée une nouvelle description : ");
                              String description = sctmp.nextLine();
                              le.retourneEvenement(name).setDescription(description);
                          }
                      }else{
-                         System.out.println("Evènement introuvable !!");
-                     }     
-                    }else if (cm == 5){
+                         System.out.println("Evénement introuvable !!");
+                     }
+                     
+                         
+                     }else if (cm == 5){
                              System.exit(0);
                          }
          
           sctmp.nextLine();
                      }
+                 
+                 
+                 
+             }
+
+             }else{
+                 if(cl == 3){
+                     System.exit(0);
                  }
              }
+         }
          
          
-     
+         
+         
+         
+         
+                 }
+             }
+}
+         
+        
      
           
          
