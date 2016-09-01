@@ -24,7 +24,11 @@ public class ListEvenements {
     
     
     public void ajouterEvenement(Evenement e){
-        //liste.add(e);
+         /*if(!nomDejaPresent(e.getNom())){
+            liste.add(e);
+        }else{
+            System.out.println("Nom déjà pris !!");
+        }*/
         boolean var = false;
         int i=0;
         while(!var){
@@ -66,6 +70,15 @@ public class ListEvenements {
 
     public int size(){
         return liste.size();
+    }
+    
+       public boolean nomDejaPresent(String nom){
+        for(int i = 0; i<liste.size();i++){
+            if(liste.get(i).getNom().equals(nom)){
+                return true;
+            }
+        }
+        return false;
     }
     
     public void listToCSV() throws FileNotFoundException{

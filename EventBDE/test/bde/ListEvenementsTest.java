@@ -32,6 +32,16 @@ public class ListEvenementsTest {
         
     }
     
+         @Test
+    public void testnomDejaPresent() {
+        ListEvenements liste = new ListEvenements();
+        liste.ajouterEvenement(new Evenement("test"));
+        liste.ajouterEvenement(new Evenement("test"));
+        
+        assertTrue(liste.nomDejaPresent("test"));
+    }
+    
+    
       @Test
     public void testSupprimerEvenement() {
         ListEvenements liste = new ListEvenements();
