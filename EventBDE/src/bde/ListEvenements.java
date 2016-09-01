@@ -37,7 +37,13 @@ public class ListEvenements {
     return affichage;
     }
     
-    public void modifierEvenement(Evenement e, String nom, String description){}
+    public void supprimerEvenementAvecLeNom(String nom){
+        for(int i = 0; i<liste.size();i++){
+            if(liste.get(i).getNom().equals(nom)){
+                liste.remove(i);
+            }
+        }
+    } 
 
     public int size(){
         return liste.size();

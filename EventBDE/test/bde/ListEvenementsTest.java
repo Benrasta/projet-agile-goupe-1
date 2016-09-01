@@ -23,14 +23,14 @@ public class ListEvenementsTest {
     
   
     @Test
-    public void testAjouter() {
+    public void testAjouterEvenement() {
         ListEvenements liste = new ListEvenements();
         liste.ajouterEvenement(new Evenement());
         assertEquals(1, liste.size());
     }
     
       @Test
-    public void testSupprimer() {
+    public void testSupprimerEvenement() {
         ListEvenements liste = new ListEvenements();
         Evenement e2 = new Evenement();
         liste.ajouterEvenement(new Evenement());
@@ -41,13 +41,25 @@ public class ListEvenementsTest {
     }
     
        @Test
-    public void testAffichage() {
+    public void testAffichageEvenement() {
         ListEvenements liste = new ListEvenements();
         Evenement e2 = new Evenement("test");
         liste.ajouterEvenement(new Evenement("test 1"));
         liste.ajouterEvenement(e2);
         System.out.println(liste.toString());
         assertEquals("Evenement: test 1\nEvenement: test\n", liste.toString());
+       
+    }
+    
+        @Test
+    public void testSupprimerEvenementAvecLeNom() {
+        ListEvenements liste = new ListEvenements();
+        Evenement e2 = new Evenement("test");
+        liste.ajouterEvenement(new Evenement("test 1"));
+        liste.ajouterEvenement(e2);
+        assertEquals(2,liste.size());
+        liste.supprimerEvenementAvecLeNom("test");
+        assertEquals(1,liste.size());
        
     }
 }
