@@ -59,7 +59,7 @@ public  class Main {
          sctmp.nextLine();         
          if(cm == 1){
                System.out.println(le.toString());
-         
+                System.out.println("apuyer sur entrer pour continuer");
          }else {
              if(cm == 2){
                   System.out.println(" voulez vous crée vraiment un  évenement ?");
@@ -81,6 +81,7 @@ public  class Main {
                     Evenement e3 = new Evenement(name);
                     le.ajouterEvenement(e3);
                     System.out.println(le.toString());
+                     System.out.println("apuyer sur entrer pour continuer");
                 }
                 
                 
@@ -104,6 +105,7 @@ public  class Main {
             
              le.supprimerEvenementAvecLeNom(name);
              System.out.println(le.toString());
+              System.out.println("apuyer sur entrer pour continuer");
          }
          
          
@@ -119,7 +121,8 @@ public  class Main {
              }
          }
          
-      sctmp.close();
+      sctmp.nextLine();
+     
          } 
          
          
