@@ -78,9 +78,12 @@ public class Evenement {
         if(dateFin != null){
             returnMessage += "date fin: " + "\n" + dateFormat(dateFin);
         }
-        returnMessage += description + "\n" ;
+        if(description != null){
+         returnMessage += description + "\n" ;   
+        }
         return returnMessage;
     }
+    
     
     public String dateFormat(Calendar date){
         String message = "";
