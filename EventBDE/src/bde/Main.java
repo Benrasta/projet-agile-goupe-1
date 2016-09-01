@@ -112,7 +112,7 @@ public  class Main {
          
                  }else if(cm == 4){
                      System.out.println(le.toString());
-                     System.out.println("Quelle événement voulait vous modifier?");
+                     System.out.println("Quel événement voulez-vous modifier?");
                      String name = sctmp.nextLine();
                      if(le.nomDejaPresent(name)){
                          System.out.println("1: Modifier le nom");
@@ -147,12 +147,12 @@ public  class Main {
                              le.retourneEvenement(name).setDateFin(new GregorianCalendar(aaaa,m,jj));
                              System.out.println(le.toString());
                          }else if(choix == 4){
-                             System.out.println("Entrée une nouvelle description : ");
+                             System.out.println("Entrez une nouvelle description : ");
                              String description = sctmp.nextLine();
                              le.retourneEvenement(name).setDescription(description);
                          }
                      }else{
-                         System.out.println("Evénement introuvable !!");
+                         System.out.println("Evènement introuvable !!");
                      }
                      
                          

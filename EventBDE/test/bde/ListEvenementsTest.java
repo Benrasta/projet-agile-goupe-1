@@ -75,7 +75,7 @@ public class ListEvenementsTest {
        
     }
     
-        @Test
+    @Test
     public void testSupprimerEvenementAvecLeNom() {
         ListEvenements liste = new ListEvenements();
         Evenement e2 = new Evenement("test");
@@ -84,6 +84,8 @@ public class ListEvenementsTest {
         assertEquals(2,liste.size());
         liste.supprimerEvenementAvecLeNom("test");
         assertEquals(1,liste.size());
-       
     }
+    
+    
+    
 }
