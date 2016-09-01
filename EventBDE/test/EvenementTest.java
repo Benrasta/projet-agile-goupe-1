@@ -5,12 +5,13 @@
  */
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -36,12 +37,10 @@ public class EvenementTest {
     @Test
     public void testGetDateDebut() {
         System.out.println("getDateDebut");
-        Evenement instance = new Evenement();
-        Calendar expResult = null;
+        Evenement instance = new Evenement("test", new GregorianCalendar(2016,8,10,10,0), new GregorianCalendar(2016,8,10,10,0), "test");
+        Calendar expResult = new GregorianCalendar(2016,8,10,10,0);
         Calendar result = instance.getDateDebut();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
