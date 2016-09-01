@@ -35,4 +35,14 @@ public class ListEvenementsTest {
         liste.supprimerEvenement(e2);
         assertEquals(1, liste.size());
     }
+    
+       @Test
+    public void testAffichage() {
+        ListEvenements liste = new ListEvenements();
+        Evenement e2 = new Evenement("test");
+        liste.ajouterEvenement(new Evenement("test 1"));
+        liste.ajouterEvenement(e2);
+        assertEquals("Evenement: test 1\nEvenement: test\n", liste.toString());
+       
+    }
 }

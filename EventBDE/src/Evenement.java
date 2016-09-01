@@ -71,7 +71,7 @@ public class Evenement {
     
     public String toString(){
         String returnMessage = "";
-        returnMessage += "Evemenent: " + nom + "\n";
+        returnMessage += "Evenement: " + nom + "\n";
         if(dateDebut != null){
             returnMessage += "date debut:" + "\n"; 
         }

@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * @author lorietta
  */
 public class ListEvenements {
-    ArrayList<Evenement> liste = new ArrayList();
+    List<Evenement> liste = new ArrayList();
     
     
     
@@ -23,8 +24,20 @@ public class ListEvenements {
     public void supprimerEvenement(Evenement e){
         liste.remove(e);
     }
+    
+    public String toString(){
+        String affichage = "";
+        for(int i=0; i<liste.size();i++){
+            affichage += liste.get(i).toString()+"\n";
+        }
+        
+        
+    return affichage;
+    }
+    
+    public void modifierEvenement(Evenement e, String nom, String description){}
 
-      public int size(){
+    public int size(){
         return liste.size();
     }
 
