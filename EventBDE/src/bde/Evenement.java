@@ -20,6 +20,8 @@ public class Evenement {
     private String description;
     
     public Evenement(){
+        nom = "";
+        description = "";
     }
     
     public Evenement(String nom){
