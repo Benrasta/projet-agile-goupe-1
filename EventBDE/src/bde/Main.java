@@ -153,10 +153,8 @@ public  class Main {
                          }
                      }else{
                          System.out.println("Evènement introuvable !!");
-                     }
-                     
-                         
-                     }else if (cm == 5){
+                     }     
+                    }else if (cm == 5){
                              System.exit(0);
                          }
          

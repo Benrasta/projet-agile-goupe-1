@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,7 +27,12 @@ public class ListEvenements {
     
     public void ajouterEvenement(Evenement e){
          if(!nomDejaPresent(e.getNom())){
-            liste.add(e);
+             try {
+                 liste.add(e);
+                 listToCSV();
+             } catch (FileNotFoundException ex) {
+                 Logger.getLogger(ListEvenements.class.getName()).log(Level.SEVERE, null, ex);
+             }
         }else{
             System.out.println("Nom déjà pris !!");
         }
