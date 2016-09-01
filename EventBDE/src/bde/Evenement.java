@@ -82,7 +82,7 @@ public class Evenement {
         if(dateDebut != null){
             returnMessage += "date debut:" + dateFormat(dateDebut) + "\n"; 
         }
-        if(dateFin != null && dateFin != dateDebut){
+        if(dateFin != null && !dateFin.equals(dateDebut)){
             returnMessage += "date fin: " + dateFormat(dateFin) + "\n";
         }
         return returnMessage;
@@ -99,9 +99,7 @@ public class Evenement {
      * */
     public String dateFormat(Calendar date){
         String message = "";
-        int test = date.get(GregorianCalendar.MONTH);
-        test+=1;
-        message += date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + test + "/" + date.get(GregorianCalendar.YEAR);
+        message += date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + date.get(GregorianCalendar.MONTH) + "/" + date.get(GregorianCalendar.YEAR);
         return message;
     }
 }
