@@ -56,21 +56,20 @@ public class ListEvenementsTest {
     public void testSupprimerEvenement() {
         ListEvenements liste = new ListEvenements();
         Evenement e2 = new Evenement();
-        liste.ajouterEvenement(new Evenement());
+        Evenement e1 = new Evenement();
         liste.ajouterEvenement(e2);
-        assertEquals(2, liste.size());
-        liste.supprimerEvenement(e2);
         assertEquals(1, liste.size());
+        liste.supprimerEvenement(e2);
+        assertEquals(0, liste.size());
     }
     
        @Test
     public void testAffichageEvenement() {
         ListEvenements liste = new ListEvenements();
-        Evenement e2 = new Evenement("test",new GregorianCalendar(2016,8,31),new GregorianCalendar(2016,8,31),"desc");
-        liste.ajouterEvenement(new Evenement("test 2",new GregorianCalendar(2016,9,31),new GregorianCalendar(2016,9,31),"desc"));
-        liste.ajouterEvenement(e2);
+        liste.ajouterEvenement(new Evenement("test",new GregorianCalendar(2016,8,3),new GregorianCalendar(2016,8,3),"desc"));
+        liste.ajouterEvenement(new Evenement("test 2",new GregorianCalendar(2016,9,3),new GregorianCalendar(2016,9,3),"desc"));
         System.out.println(liste.toString());
-        assertEquals("Evenement: test\ndate debut:31/8/2016\nEvenement: test 2\ndate debut:31/9/2016", liste.toString());
+        assertEquals("Evenement: test\ndate debut:3/8/2016\nEvenement: test 2\ndate debut:3/9/2016\n", liste.toString());
         System.out.println(liste.toString());
        
     }
