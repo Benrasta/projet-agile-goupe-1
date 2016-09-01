@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
 
 /**
  *
- * @author boreec
+ * @author lo
  */
 public class Main {
     public static void main(String args[]){
