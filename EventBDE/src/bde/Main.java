@@ -41,12 +41,18 @@ public  class Main {
          le.ajouterEvenement(e2);
          //System.out.println(le.toString());
         
+         
+         
+         
+         
+         
+         while (true){
          System.out.println("que voulez vous faire ?");
          System.out.println("1 :afficher les evenement ");
          System.out.println("2 : ajouté un evenement");
          System.out.println("3 : suprimmer un evenement ");
          System.out.println("4 : modifier un evenement ");
-       
+         System.out.println("5 : quitter ");
          
          Scanner sctmp = new Scanner(System.in);
          int cm =sctmp.nextInt(); 
@@ -104,13 +110,17 @@ public  class Main {
                  }else{
                      if(cm == 4){
                          
+                     }else {
+                         if (cm == 5){
+                             System.exit(0);
+                         }
                      }
                  }
              }
          }
          
       sctmp.close();
-         
+         } 
          
          
         
