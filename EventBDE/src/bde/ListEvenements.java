@@ -1,9 +1,7 @@
 package bde;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,40 +22,15 @@ public class ListEvenements {
     List<Evenement> liste = new ArrayList();
     
     
-     public void ajouterEvenement(Evenement e){
-        if(e.getDateDebut()!=null){
-            boolean var = false;            
-            List<Evenement> liste2 = liste;
-             if(liste.isEmpty()){
-                liste.add(e);
-            }
-             else {
-                liste.add(e);
-                int o = liste.size();
-                for(int j=0; j<o;j++){
-                    if(liste.get(j).getDateDebut().before(e.getDateDebut()) || var){
-                            liste2.add(liste.get(j));
-                    }
-                    else {
-                        liste2.add(e);
-                        liste2.add(liste.get(j));
-                        var=true;
-                    }
-                }
-                
-            }
-        } 
-         else{
-            if(!nomDejaPresent(e.getNom())){
-                liste.add(e);
-            }else{
-                System.out.println("Nom déjà pris !!");
-            }
+    
+    public void ajouterEvenement(Evenement e){
+         if(!nomDejaPresent(e.getNom())){
+            liste.add(e);
+        }else{
+            System.out.println("Nom déjà pris !!");
         }
-     }
-                
-    
-    
+      
+    }
     
     public void supprimerEvenement(Evenement e){
         liste.remove(e);
@@ -93,6 +66,31 @@ public class ListEvenements {
         }
         return false;
     }
+       
+        public Evenement retourneEvenement(String nom){
+        for(int i = 0; i<liste.size();i++){
+            if(liste.get(i).getNom().equals(nom)){
+                return liste.get(i);
+            }
+        }
+        return null;
+    }
+    public void trierList(){
+        List<Evenement> liste2 = new ArrayList();
+        int cpt=0;
+        int size = liste.size();
+        while(!liste.isEmpty()){
+            for(int i=0 ; i<liste.size() ;i++){
+                if(liste.get(i).getDateDebut().before(liste.get(cpt).getDateDebut())){
+                    cpt = i;
+                }
+            }
+            liste2.add(liste.get(cpt));
+            liste.remove(cpt);
+            cpt=0;
+        }
+        liste = liste2;
+    }   
     
     public void listToCSV() throws FileNotFoundException{
         String fichier = "evenement.csv";
@@ -129,32 +127,6 @@ public class ListEvenements {
             e.printStackTrace();
 	}
     }
-  public Evenement retourneEvenement(String nom){
-        for(int i = 0; i<liste.size();i++){
-            if(liste.get(i).getNom().equals(nom)){
-                return liste.get(i);
-            }
-        }
-        return null;
-    }
-        /**
-     * Affiche le contenu d'un fichier CSV vers l'entree standard
-     */
-    public void afficherCSV(){
-        String fichier = "evenement.csv";
-        String line = "";
-        String separateur = ",";
-        try (BufferedReader br = new BufferedReader(new FileReader(fichier))) {
 
-            while ((line = br.readLine()) != null) {
-                // use comma as separator
-                String[] data = line.split(separateur);
-                System.out.println("evenement: " + data[0] + " debut: " + data[1] + " fin: " + data[2]);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
-
 

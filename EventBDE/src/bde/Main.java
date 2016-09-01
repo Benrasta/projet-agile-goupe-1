@@ -46,7 +46,9 @@ public  class Main {
          
          
          
+         
          while (true){
+         le.trierList();
          System.out.println("que voulez vous faire ?");
          System.out.println("1 :afficher les evenements ");
          System.out.println("2 : ajouter un evenement");
@@ -75,12 +77,13 @@ public  class Main {
              
            
                     String name = sctmp.nextLine();
-                     sctmp.nextLine();
+                    System.out.println("appuyer sur entrée pour continuer"); 
+                    sctmp.nextLine();
            
                     Evenement e3 = new Evenement(name);
                     le.ajouterEvenement(e3);
                     System.out.println(le.toString());
-                     System.out.println("appuyer sur entrée pour continuer");
+                     
                 }
                 
                 
@@ -138,7 +141,7 @@ public  class Main {
                              System.out.println("Saisissez l'année :");
                              int aaaa = sctmp.nextInt();
                              System.out.println("Saisissez le mois :");
-                             int m = sctmp.nextInt();
+                             int m = sctmp.nextInt() -1;
                               System.out.println("Saisissez le jour :");
                              int jj = sctmp.nextInt();
                              le.retourneEvenement(name).setDateFin(new GregorianCalendar(aaaa,m,jj));
