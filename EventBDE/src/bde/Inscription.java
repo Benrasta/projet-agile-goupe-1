@@ -30,6 +30,7 @@ public class Inscription {
         
     }
     
+    
     public boolean valformulaire(Inscription ins){
         ArrayList<Inscription> li = new ArrayList<>();
         
