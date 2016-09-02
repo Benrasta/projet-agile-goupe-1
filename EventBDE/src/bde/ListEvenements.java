@@ -109,7 +109,7 @@ public class ListEvenements {
         
         StringBuilder sb = new StringBuilder();
         try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream(new File(fichier),true)); 
+            PrintWriter pw = new PrintWriter(new FileOutputStream(new File(fichier),false)); 
             // si le fichier n'existe pas encore
             if (!fichierExisteDeja){
                 sb.append("nom");
@@ -132,10 +132,10 @@ public class ListEvenements {
                 sb.append("\n");
             }
             if(new File(fichier).exists()){
-                pw.append(sb.toString());
+                pw.write(sb.toString());
                
             }else{
-                pw.println(sb.toString());
+                pw.write(sb.toString());
             }
             
             pw.close();

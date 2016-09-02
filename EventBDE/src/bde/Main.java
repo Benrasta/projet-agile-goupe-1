@@ -66,8 +66,8 @@ public  class Main {
                 System.out.println("Entrez le numero d'un evenement");
                 int cn = sctmp.nextInt();
                 sctmp.nextLine();
-                
-                System.out.println(le.liste.get(cn-1).avecDescription());
+                if(cn>0 && cn<le.liste.size())
+                    System.out.println(le.liste.get(cn-1).avecDescription());
             }
         }else {
              if(cl == 2){
