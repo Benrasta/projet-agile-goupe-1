@@ -3,6 +3,7 @@ package bde;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -101,13 +102,14 @@ public class ListEvenements {
         liste = liste2;
     }   
     
+    
     public void listToCSV() throws FileNotFoundException{
         String fichier = "evenement.csv";
         boolean fichierExisteDeja = new File(fichier).exists();
         
         StringBuilder sb = new StringBuilder();
         try {
-            PrintWriter pw = new PrintWriter(new File(fichier));
+            PrintWriter pw = new PrintWriter(new FileOutputStream(new File(fichier),true)); 
             // si le fichier n'existe pas encore
             if (!fichierExisteDeja){
                 sb.append("nom");
@@ -129,12 +131,18 @@ public class ListEvenements {
                 sb.append(liste.get(i).getDescription());
                 sb.append("\n");
             }
-            pw.write(sb.toString());
+            if(new File(fichier).exists()){
+                pw.append(sb.toString());
+               
+            }else{
+                pw.println(sb.toString());
+            }
+            
             pw.close();
             
-	} catch (IOException e) {
+    } catch (IOException e) {
             e.printStackTrace();
-	}
+    }
     }
         /**
      * Affiche le contenu d'un fichier CSV vers l'entree standard
@@ -143,15 +151,19 @@ public class ListEvenements {
         String fichier = "evenement.csv";
         String line = "";
         String separateur = ",";
-        try (BufferedReader br = new BufferedReader(new FileReader(fichier))) {
-
-            while ((line = br.readLine()) != null) {
-                // use comma as separator
-                String[] data = line.split(separateur);
-                System.out.println("evenement: " + data[0] + " debut: " + data[1] + " fin: " + data[2]);
-            }
-        } catch (IOException e) {
+        if(new File(fichier).exists()){
+            try (BufferedReader br = new BufferedReader(new FileReader(fichier))) {
+                while ((line = br.readLine()) != null) {
+                    String[] data = line.split(separateur);
+                    if(data.length <= 1){}else{
+                        System.out.println("evenement: " + data[0] + " debut: " + data[1] + " fin: " + data[2]);
+                    }
+                }
+            } catch (IOException e) {
             e.printStackTrace();
+            }
+        }else{
+            System.out.println("Aucun évènement");
         }
     }
     
