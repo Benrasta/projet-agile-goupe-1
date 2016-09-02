@@ -81,7 +81,8 @@ public  class Main {
          System.out.println("2 : ajouter un evenement");
          System.out.println("3 : supprimer un evenement ");
          System.out.println("4 : modifier un evenement ");
-         System.out.println("5 : quitter ");
+         System.out.println("5 : Visualiser un evenement ");
+         System.out.println("6 : quitter ");
          
          
          int cm =sctmp.nextInt(); 
@@ -184,6 +185,12 @@ public  class Main {
                      
                          
                      }else if (cm == 5){
+                        System.out.println(le.toString());
+                        System.out.println("Quelle événement voulait vous visualiser?");
+                        String name = sctmp.nextLine();
+                        
+                        System.out.println(le.retourneEvenement(name).toString()+"\n"+le.retourneEvenement(name).getDescription());
+                    }else if (cm == 6){
                              System.exit(0);
                          }
          
