@@ -47,7 +47,8 @@ public  class Main {
          System.out.println("que voulez vous faire ?");
          System.out.println("1 : afficher les evenements ");
          System.out.println("2 : se connecter ");
-         System.out.println("3 : quitter ");
+         System.out.println("3 : s'inscrire");
+         System.out.println("4 : quitter ");
          Scanner sctmp = new Scanner(System.in);
         
          int cl = sctmp.nextInt();
@@ -242,9 +243,33 @@ public  class Main {
                 }                                                   
             }
         }else{
-            if(cl == 3)
-                System.exit(0);
-
+            if(cl == 3){
+                boolean estins =false;
+                
+                while(!estins){
+                System.out.println("entrer le pseudo voulu :");
+                String ipseu  = sctmp.nextLine();
+                 System.out.println("appuyer sur entrée pour continuer");
+                sctmp.nextLine();
+                System.out.println("entrer le mdp voulu ( ne doit pas contenire le carractère ';' :");
+                String imdp =sctmp.nextLine();
+                
+                Inscription inscription = new Inscription(ipseu, imdp);
+                
+                if(inscription.valformulaire(inscription)){
+                    estins = true;
+                }else{
+                    System.out.println("pseudo ou mot de passe incorecte !");
+                }
+                
+                }
+                
+                
+            }else {
+                if(cl == 4 ){
+                   System.exit(0); 
+                }
+            }
             }
         }
         }
