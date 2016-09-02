@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -44,7 +45,7 @@ public class Inscription {
             
             while((chaine = fichierlog.readLine())!= null){
             
-                String[] tabligne= chaine.split(",");
+                String[] tabligne= chaine.split(";");
                 li.add(new Inscription(tabligne[0], tabligne[1]));
                 
             }
@@ -64,20 +65,23 @@ public class Inscription {
         }
         
         if(valid){
-            li.add(ins);
-            try{
-                File save = new File("logins.csv");
-                FileWriter s = new FileWriter(save);
-		String res ="";
-                for(Inscription i : li){
-                    res=i.getlnom()+","+i.getlmdp()+"\n";
+              try{
+                StringBuilder sb = new StringBuilder();
+                String csv = "logins.csv";
+                PrintWriter pw = new PrintWriter(new File(csv));
+                for(int i =0 ; i< li.size();i++){
+                    sb.append(li.get(i).getlnom());
+                    sb.append(";");
+                    sb.append(li.get(i).getlmdp());
+                    sb.append("\n");
                 }
-			
-			
-		s.write(res);
-		s.close();
-                
-                
+		sb.append(ins.getlnom());
+                sb.append(";");
+                sb.append(ins.getlmdp());
+                sb.append("\n");
+                pw.write(sb.toString());
+                pw.close();
+           
                 
             }catch (IOException exe){
                 

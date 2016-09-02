@@ -62,7 +62,7 @@ public class Login {
             
             while((chaine = fichierlog.readLine())!= null){
             
-                String[] tabligne= chaine.split(",");
+                String[] tabligne= chaine.split(";");
                 list.add(new Login(tabligne[0], tabligne[1]));
                 
             }
