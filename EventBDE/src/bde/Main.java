@@ -54,7 +54,8 @@ public  class Main {
         
          if( cl == 1){
              le.trierList();
-             System.out.println(le.toString());
+             //System.out.println(le.toString());
+                le.afficherCSV();
              System.out.println("\nQue voulez-vous faire ?");
              System.out.println("\n1 - visualiser la description d'un evenement");
              System.out.println("2 - revenir au menu");
