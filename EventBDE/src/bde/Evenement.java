@@ -24,7 +24,7 @@ public class Evenement {
         nom = "";
         description = "";
         dateDebut = new GregorianCalendar();
-        dateFin = new GregorianCalendar();
+        dateFin =  new GregorianCalendar();
     }
     
     public Evenement(String nom){
@@ -32,7 +32,7 @@ public class Evenement {
         this.nom = nom;
     }
     
-    public Evenement(String nom, String description){
+    public Evenement(String nom, String description){        
         this(nom);
         this.description = description;
     }
@@ -79,10 +79,10 @@ public class Evenement {
     public String toString(){
         String returnMessage = "";
         returnMessage += "Evenement: " + nom + "\n";
-        if(dateDebut != null){
+        if(!dateDebut.equals(new GregorianCalendar())){
             returnMessage += "date debut:" + dateFormat(dateDebut) + "\n"; 
         }
-        if(dateFin != null && !dateFin.equals(dateDebut)){
+        if(dateFin.equals(new GregorianCalendar()) && !dateFin.equals(dateDebut)){
             returnMessage += "date fin: " + dateFormat(dateFin) + "\n";
         }
         return returnMessage;

@@ -1,4 +1,4 @@
-package bde;
+ package bde;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -139,8 +139,7 @@ public class EvenementTest {
         System.out.println("avecDescription");
         Evenement instance = new Evenement("nom", "desc");
         String expResult = "Evenement: nom\ndescription: desc\n";
-        String result = instance.avecDescription();
-        assertEquals(expResult, result);
+        assertEquals(expResult, instance.avecDescription());
     }
 
     /**
