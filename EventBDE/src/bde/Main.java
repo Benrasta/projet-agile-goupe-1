@@ -1,6 +1,7 @@
 package bde;
 
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -31,15 +32,12 @@ public  class Main {
     
     public static void main(String args[]){
         
-        Evenement e =new Evenement("yolo", "on va faire du yolo swag");
-        Calendar date = new GregorianCalendar(2017,2,20);
-        Evenement e2 =new Evenement("soiré frite",date ,date , "on va faire une frite chez momo");
+        
         
         
         
          ListEvenements le =new ListEvenements();
-         le.ajouterEvenement(e);
-         le.ajouterEvenement(e2);
+       
 
          //System.out.println(le.toString());
         
@@ -95,11 +93,16 @@ public  class Main {
                     le.trierList();
                     System.out.println("que voulez vous faire ?");
                     System.out.println("1 : afficher les evenements ");
-                    System.out.println("2 : ajouter un evenement");
-                    System.out.println("3 : supprimer un evenement ");
-                    System.out.println("4 : modifier un evenement ");
-                    System.out.println("5 : creer sondage ");
-                    System.out.println("6 : quitter ");
+                    if(log.EstAdmin()){
+                        System.out.println("2 : ajouter un evenement");
+                        System.out.println("3 : supprimer un evenement ");
+                        System.out.println("4 : modifier un evenement ");
+                        System.out.println("5 : creer sondage ");
+                        System.out.println("6 : quitter "); 
+                    }
+                    else {
+                        System.out.println("2 : quitter ");
+                    }
 
          
                     int cm =sctmp.nextInt(); 
@@ -121,14 +124,24 @@ public  class Main {
                             int cn = sctmp.nextInt();
                             sctmp.nextLine();
                             
-                            if(cn>0 && cn<=le.liste.size())
+                            if(cn>0 && cn<=le.liste.size()){
                                 System.out.println(le.liste.get(cn-1).avecDescription());
+                                if(le.liste.get(cn-1) instanceof Sondage){
+                                    System.out.println("\n1 - Votez pour le sondage\n2 - Revenir au menu\n");
+                                    int cf = sctmp.nextInt();
+                                    sctmp.nextLine();
+                                    if(cf == 1){
+                                     
+                                    }
+                                        
+                                }
+                            }
                             else
                                 System.out.println("Numero de l'evenement invalide\n");
                         }
                        System.out.println("appuyer sur entrée pour continuer");
                     }
-                    else if(cm == 2){
+                    else if(cm == 2 && log.EstAdmin()){
                        System.out.println(" voulez vous créer vraiment un évenement ?");
                        System.out.println("1 :oui ");
                        System.out.println("2 :non ");
@@ -148,7 +161,7 @@ public  class Main {
                             le.afficherCSV();
                         }                                
                     }
-                     else if(cm ==3 ){
+                     else if(cm ==3 && log.EstAdmin() ){
                         System.out.println(" voulez vous  vraiment supprimer un  évenement ?");
                         System.out.println("1 :oui ");
                         System.out.println("2 :non ");
@@ -166,7 +179,7 @@ public  class Main {
                             le.afficherCSV();
                             System.out.println("appuyer sur entrée pour continuer");
                         }                 
-                    }else if(cm == 4){
+                    }else if(cm == 4 && log.EstAdmin()){
                         
                         System.out.println(le.toString());
                         System.out.println("Quelle événement voulait vous modifier?");
@@ -174,8 +187,8 @@ public  class Main {
                         
                         if(le.nomDejaPresent(name)){
                             System.out.println("1: Modifier le nom");
-                            System.out.println("2: Modifier la date de début (aaaa,m,jj)");
-                            System.out.println("3: Modifier la date de fin (aaaa,m,jj)");
+                            System.out.println("2: Modifier la date de début (aaaa,mm,jj)");
+                            System.out.println("3: Modifier la date de fin (aaaa,mm,jj)");
                             System.out.println("4: Modifier la description");                                                  
                          
                             int choix = sctmp.nextInt();
@@ -216,7 +229,7 @@ public  class Main {
                      }                                              
                      
                     }
-                     else if(cm == 5){
+                     else if(cm == 5 && log.EstAdmin()){
                         System.out.println(" voulez vous créer vraiment un sondage ?");                        
                         System.out.println("1 :oui ");
                         System.out.println("2 :non ");
@@ -231,11 +244,11 @@ public  class Main {
                             sctmp.nextLine();
 
                             Sondage e3 = new Sondage(name);
-                            le.ajouterEvenement(e3);                        
+                            le.ajouterEvenement(e3);
                             System.out.println(le);
                         } 
                     }
-                    else if (cm == 6){
+                    else if (cm == 6 || (cm == 2 && !log.EstAdmin())){
                         System.exit(0);
                     }
 

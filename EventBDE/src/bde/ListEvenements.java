@@ -47,9 +47,9 @@ public class ListEvenements {
     }
     
     public String toString(){
-        String affichage = "";
+        String affichage = "\n";
         for(int i=0; i<liste.size();i++){
-            affichage += liste.get(i).toString();
+            affichage +=(i+1)+" - "+ liste.get(i).toString()+"\n";
         }
         
         
