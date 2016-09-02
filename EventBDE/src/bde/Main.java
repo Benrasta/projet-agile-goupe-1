@@ -53,7 +53,7 @@ public  class Main {
          sctmp.nextLine();
          if( cl == 1){
              le.trierList();
-             System.out.println(le.toString());
+             le.afficherCSV();
          }else {
              if(cl == 2){
              System.out.println("pseudo : ");
